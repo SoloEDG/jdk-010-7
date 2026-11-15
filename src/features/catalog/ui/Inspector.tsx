@@ -5,10 +5,12 @@ export function Inspector({
   element,
   onUpdate,
   onRemove,
+  readOnly = false,
 }: {
   element?: Element;
   onUpdate: (patch: Partial<Element>) => void;
   onRemove: () => void;
+  readOnly?: boolean;
 }) {
   if (!element)
     return (
@@ -43,6 +45,7 @@ export function Inspector({
               min="20"
               max={key === "x" ? 980 : 580}
               value={Math.round(element[key])}
+              disabled={readOnly}
               onChange={(e) =>
                 onUpdate({
                   [key]: Math.max(
@@ -72,6 +75,7 @@ export function Inspector({
             max={p.max}
             step={p.step}
             value={Number(element[p.key])}
+            disabled={readOnly}
             onChange={(e) =>
               onUpdate({
                 [p.key]:
@@ -87,9 +91,9 @@ export function Inspector({
           </div>
         </label>
       ))}
-      <button className="delete" onClick={onRemove}>
+      <button className="delete" onClick={onRemove} disabled={readOnly}>
         <Trash2 size={14} />
-        移除器件
+        {readOnly ? "预览模式不可移除器件" : "移除器件"}
       </button>
     </section>
   );

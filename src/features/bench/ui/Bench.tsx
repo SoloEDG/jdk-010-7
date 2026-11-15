@@ -10,6 +10,7 @@ export function Bench({
   onUpdate,
   children,
   grid,
+  readOnly = false,
 }: {
   doc: LabDocument;
   selected: string | null;
@@ -17,6 +18,7 @@ export function Bench({
   onUpdate: (id: string, patch: Partial<Element>) => void;
   children: ReactNode;
   grid: boolean;
+  readOnly?: boolean;
 }) {
   const svg = useRef<SVGSVGElement>(null);
   const [drag, setDrag] = useState<{
@@ -29,7 +31,7 @@ export function Bench({
   return (
     <svg
       ref={svg}
-      className="bench-svg"
+      className={`bench-svg ${readOnly ? "read-only" : ""}`}
       viewBox="0 0 1000 600"
       role="img"
       aria-label="交互式光学实验台"
@@ -93,6 +95,7 @@ export function Bench({
             aria-label={labels[e.kind] + " " + (i + 1)}
             className="device"
             onKeyDown={(ev) => {
+              if (readOnly) return;
               if (ev.key === "Enter") onSelect(e.id);
               if (ev.key.startsWith("Arrow")) {
                 ev.preventDefault();
@@ -126,6 +129,7 @@ export function Bench({
             }}
             onPointerDown={(ev) => {
               ev.stopPropagation();
+              if (readOnly) return;
               ev.currentTarget.setPointerCapture(ev.pointerId);
               onSelect(e.id);
               if (svg.current) {

@@ -885,3 +885,501 @@ footer button {
     top: 10px;
   }
 }
+
+/* ============ 课程制作 / 试做 通用 ============ */
+.mode-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 10px;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #3a4640;
+  color: #a8bd92;
+}
+.mode-badge.mode-teacher {
+  color: #9fc7e8;
+  border-color: #35475a;
+  background: #16222e;
+}
+.mode-badge.mode-student {
+  color: #e2c48f;
+  border-color: #544633;
+  background: #241f17;
+}
+.save-button.secondary {
+  background: #1f2a33 !important;
+  color: #b7c4cf !important;
+  border: 1px solid #34424e;
+}
+.ghost-button {
+  border: 1px solid #34404b;
+  border-radius: 5px;
+  color: #93a4b1;
+  font-size: 10px;
+  padding: 7px 10px;
+  width: 100%;
+  margin-top: 8px;
+}
+.ghost-button:hover {
+  background: #22303b;
+  border-color: #46586a;
+}
+.ghost-button.danger {
+  color: #c98d8b;
+  border-color: #4d3739;
+}
+.ghost-button:disabled {
+  opacity: 0.4;
+}
+.author-panel,
+.student-panel,
+.teacher-preview {
+  padding: 20px 17px;
+  border-top: 1px solid #2a333d;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.author-meta input,
+.author-meta textarea,
+.stage-editor input[type="text"],
+.stage-editor textarea,
+.stage-name-input,
+.hint-row input {
+  width: 100%;
+  background: #1a242d;
+  border: 1px solid #32404c;
+  border-radius: 5px;
+  color: #d3dde4;
+  padding: 8px 10px;
+  font-size: 11px;
+  resize: vertical;
+}
+.author-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.author-meta input {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ============ 阶段标签 ============ */
+.stage-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.stage-tab {
+  width: 34px;
+  height: 30px;
+  border: 1px solid #34404b;
+  border-radius: 5px;
+  color: #8fa0ad;
+  font-size: 11px;
+  position: relative;
+}
+.stage-tab.active {
+  border-color: #98c268;
+  color: #c6e6a3;
+  background: #293825;
+}
+.stage-tab.add {
+  color: #93b579;
+}
+.stage-tab.has-error {
+  border-color: #c47c72;
+  color: #e0a49d;
+}
+.error-dot {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d9776b;
+}
+.stage-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  max-height: 46vh;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.editor-block {
+  border-top: 1px solid #28323c;
+  padding-top: 11px;
+}
+.editor-block h4,
+.rule-summary h4,
+.hint-box h4 {
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  color: #8495a2;
+  margin: 0 0 9px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.kind-chip {
+  border: 1px solid #35424e;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 10px;
+  color: #7f92a0;
+  gap: 4px;
+}
+.kind-chip.active {
+  border-color: #8bb863;
+  color: #c8e6a6;
+  background: #243321;
+}
+.kind-chip.locked {
+  opacity: 0.55;
+}
+.hint-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 7px;
+}
+.hint-row svg {
+  color: #d8c587;
+  flex-shrink: 0;
+}
+.hint-row button {
+  padding: 6px;
+  color: #b58482;
+  flex-shrink: 0;
+}
+
+/* ============ 判定条件行 ============ */
+.rule-row {
+  display: grid;
+  grid-template-columns: 1fr 52px 64px;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 7px;
+}
+.rule-row select,
+.rule-row input {
+  width: 100%;
+  min-width: 0;
+}
+.rule-row input[type="number"] {
+  background: #1a242d;
+  border: 1px solid #32404c;
+  border-radius: 4px;
+  color: #d3dde4;
+  padding: 6px;
+  font-size: 11px;
+}
+.rule-row small {
+  font-size: 9px;
+  color: #6d808d;
+}
+.rule-row > button {
+  padding: 6px;
+  color: #b58482;
+}
+.rule-note {
+  grid-column: 1 / -1;
+  background: #1a242d;
+  border: 1px dashed #3a4752;
+  border-radius: 4px;
+  color: #93a3af;
+  padding: 6px 8px;
+  font-size: 10px;
+}
+.small-note {
+  font-size: 9px;
+  margin: 6px 0 0;
+}
+.stage-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-top: 1px solid #28323c;
+  padding-top: 10px;
+}
+.stage-actions-right {
+  display: flex;
+  gap: 6px;
+}
+.stage-actions-right .ghost-button {
+  margin-top: 8px;
+}
+
+/* ============ 校验报告 ============ */
+.validation-box {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  border-radius: 6px;
+  padding: 10px 11px;
+  font-size: 10px;
+  line-height: 1.7;
+}
+.validation-box ul {
+  margin: 0;
+  padding-left: 14px;
+}
+.validation-box.error {
+  background: #2c1d1e;
+  border: 1px solid #573739;
+  color: #e0a39c;
+}
+.validation-box.error svg {
+  color: #dd8b81;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.validation-box.ok {
+  background: #1e2b1d;
+  border: 1px solid #3f5537;
+  color: #b5dc95;
+}
+.validation-box.ok svg {
+  color: #a6d679;
+  flex-shrink: 0;
+}
+.author-footer {
+  border-top: 1px solid #2b353f;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.footer-row {
+  display: flex;
+  gap: 7px;
+}
+.footer-row .ghost-button,
+.footer-row .save-button {
+  margin-top: 0;
+  flex: 1;
+  padding: 8px 6px;
+  font-size: 10px;
+}
+
+/* ============ 学生面板 ============ */
+.stage-stepper {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-wrap: wrap;
+}
+.step {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  width: 26px;
+  height: 26px;
+  justify-content: center;
+  border: 1px solid #34404b;
+  border-radius: 5px;
+  font-size: 10px;
+  color: #8496a3;
+  position: relative;
+}
+.step.current {
+  border-color: #d3b16f;
+  color: #ecd39c;
+  background: #2c2619;
+}
+.step.done {
+  border-color: #83ac62;
+  color: #bfe29a;
+  background: #243320;
+}
+.step.locked {
+  opacity: 0.45;
+}
+.step svg {
+  width: 11px;
+}
+.student-panel h2,
+.teacher-preview h2 {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 4px 0 0;
+}
+.stage-brief {
+  font-size: 11px;
+  color: #95a5b1;
+  line-height: 1.8;
+  margin: 0;
+}
+.rule-summary ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.rule-summary li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  color: #a9b7c1;
+  flex-wrap: wrap;
+}
+.rule-summary li.ok {
+  color: #b9dd97;
+}
+.rule-summary li.bad {
+  color: #d8a09a;
+}
+.rule-summary li small {
+  margin-left: auto;
+  color: #7e909d;
+  font-variant-numeric: tabular-nums;
+}
+.hint-box {
+  border: 1px solid #3a3826;
+  background: #221f15;
+  border-radius: 6px;
+  padding: 11px;
+}
+.hint-text {
+  font-size: 10px;
+  color: #d8cba4;
+  line-height: 1.7;
+  margin: 5px 0;
+}
+.hint-box .ghost-button {
+  margin-top: 4px;
+}
+.submit-row {
+  display: flex;
+  gap: 8px;
+}
+.submit-row .save-button {
+  flex: 1;
+}
+.submit-row .ghost-button {
+  width: auto;
+  margin-top: 0;
+}
+.submission-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #33404b;
+  color: #93a4b1;
+  line-height: 1.6;
+}
+.submission-status.passed {
+  background: #1e2b1d;
+  border-color: #41573a;
+  color: #b7de94;
+}
+.submission-status.failed {
+  background: #2c1d1e;
+  border-color: #553638;
+  color: #dea79f;
+}
+.exit-teacher {
+  font-size: 9px;
+}
+
+/* ============ 教师预览 ============ */
+.preview-stage-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+.preview-stage {
+  justify-content: flex-start;
+  gap: 9px;
+  padding: 9px 10px;
+  border: 1px solid #32404c;
+  border-radius: 5px;
+  font-size: 11px;
+  color: #96a7b4;
+  text-align: left;
+}
+.preview-stage span {
+  color: #6d808d;
+  font-size: 10px;
+}
+.preview-stage.active {
+  border-color: #8bb863;
+  background: #243321;
+  color: #c9e7a6;
+}
+.preview-stage .switch-icon {
+  margin-left: auto;
+  opacity: 0.6;
+}
+.verdict-banner {
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.verdict-banner.passed {
+  background: #1e2b1d;
+  border: 1px solid #41573a;
+  color: #b7de94;
+}
+.verdict-banner.pending {
+  background: #26221a;
+  border: 1px solid #4a4130;
+  color: #d3c199;
+}
+.preview-actions {
+  display: flex;
+  gap: 8px;
+}
+.preview-actions .ghost-button,
+.preview-actions .save-button {
+  flex: 1;
+}
+
+/* ============ 锁定的器件目录 ============ */
+.catalog-item.locked {
+  opacity: 0.55;
+}
+.catalog-item.locked:hover {
+  background: none;
+}
+.catalog-item.locked svg {
+  color: #8d7c5e;
+}
+
+/* ============ 导入错误弹窗 ============ */
+.import-modal {
+  max-width: 560px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.issue-list {
+  color: #e0a39c;
+  font-size: 11px;
+  line-height: 2;
+  padding-left: 18px;
+}
+.bench-svg.read-only .device {
+  cursor: default;
+}

@@ -1,10 +1,14 @@
 import type { LabDocument } from "../../../shared/document";
-export function saveDocument(doc: LabDocument) {
-  localStorage.setItem("lumen-document", JSON.stringify(doc));
+
+const DEFAULT_KEY = "lumen-document";
+
+export function saveDocument(doc: LabDocument, key: string = DEFAULT_KEY) {
+  localStorage.setItem(key, JSON.stringify(doc));
 }
-export function loadDocument(): LabDocument | null {
+
+export function loadDocument(key: string = DEFAULT_KEY): LabDocument | null {
   try {
-    const v = JSON.parse(localStorage.getItem("lumen-document") ?? "null");
+    const v = JSON.parse(localStorage.getItem(key) ?? "null");
     if (v?.version !== 1 || !Array.isArray(v.items) || v.items.length > 80)
       return null;
     for (const e of v.items) {
